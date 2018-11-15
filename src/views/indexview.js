@@ -1,3 +1,7 @@
+import jQuery from "jquery";
+window.$ = window.jQuery = jQuery;
+var state= require('../state/state');
+
 function formatMostpoular(collection) {
     let mostpopular = document.querySelector(".basket-product-list");
     for (var coll in collection.shoppingbag[0].items) {
@@ -19,7 +23,7 @@ function formatMostpoular(collection) {
         </div>
         <div class="subtotal">${collection.shoppingbag[0].items[coll].Price}</div>
         <div class="remove">
-          <button data-toggle="modal" data-target="#exampleModal">EDIT |</button>
+          <button data-toggle="modal" id=${collection.shoppingbag[0].items[coll].id} class="open-AddBookDialog">EDIT |</button>
           <button>REMOVE |</button>
           <button>SAVE FOR LATER</button>
         </div>
@@ -29,6 +33,20 @@ function formatMostpoular(collection) {
     }
 }
 
+$(document).on("click", ".open-AddBookDialog", function () {
+    var myBookId = this.id ;
+    let list=state.store.getState().parsedata.shoppingbag[0].items;
+    var newArray = list.filter(function (el) {
+        return el.id==myBookId
+          });
+          $(".modal-body #itemname").text( newArray[0].Name );
+          $(".modal-body #modalpic").attr('src',newArray[0].Img_Url);
+          $('select[name^="itemsize"] option:selected').attr("selected",null);
+          $('select[name^="quantity"] option:selected').attr("selected",null);
+          $('select[name^="itemsize"] option[value='+newArray[0].Size+']').attr("selected","selected");
+          $('select[name^="quantity"] option[value='+newArray[0].Quantity+']').attr("selected","selected");
+        $('#exampleModal').modal('show');
+});
 function formatSearch(collection) {
     let seacrhpopular = document.querySelector("#searchresults");
     for (var coll in collection.restaurants) {

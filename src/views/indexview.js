@@ -1,51 +1,31 @@
 function formatMostpoular(collection) {
-    let mostpopular = document.querySelector("#mostpopular");
-    for (var coll in collection.collections) {
-
-        var card = document.createElement('div');
-        card.id = collection.collections[coll].collection.collection_id;
-        card.title = collection.collections[coll].collection.title;
-        var cardheader = document.createElement('div');
-        cardheader.className = 'card-header';
-        cardheader.innerHTML = '<strong>' + collection.collections[coll].collection.title + '</strong>';
-        card.appendChild(cardheader);
-        cardheader.addEventListener("click", function click(e) {
-            var collid = e.target.parentElement.id;
-            var collname = e.target.parentElement.title;
-            window.location.href = "collectiondetails.html?collid=" + collid + "&collname=" + collname;
-            e.stopPropagation();
-        });
-        var cardimage = document.createElement('img');
-
-        cardimage.className = 'card-img-top';
-        cardimage.setAttribute('src', collection.collections[coll].collection.image_url);
-        cardimage.setAttribute('alt', collection.collections[coll].collection.title);
-        card.appendChild(cardimage);
-        cardimage.addEventListener("click", function click(e) {
-            var collid = e.target.parentElement.id;
-            var collname = e.target.parentElement.title;
-            window.location.href = "collectiondetails.html?collid=" + collid + "&collname=" + collname;
-            e.stopPropagation();
-        });
-
-        var cardbody = document.createElement('div');
-
-        cardbody.className = 'card-body';
-        cardbody.innerHTML = collection.collections[coll].collection.description;
-        card.appendChild(cardbody);
-        cardbody.addEventListener("click", function click(e) {
-            var collid = e.target.parentElement.id;
-            var collname = e.target.parentElement.title;
-            window.location.href = "collectiondetails.html?collid=" + collid + "&collname=" + collname;
-            e.stopPropagation();
-        });
-        card.className = 'card col-sm-3 text-white bg-dark most-pop';
-        mostpopular.appendChild(card);
-        card.addEventListener("click", function click(e) {
-            var collid = e.target.id
-            var collname = e.target.title;
-            window.location.href = "collectiondetails.html?collid=" + collid + "&collname=" + collname;
-        });
+    let mostpopular = document.querySelector(".basket-product-list");
+    for (var coll in collection.shoppingbag[0].items) {
+        const markup =`<div class="basket-product">
+         
+         <div class="item">
+           <div class="product-image">
+             <img src=${collection.shoppingbag[0].items[coll].Img_Url} alt="Placholder Image 2" class="product-frame">
+           </div>
+           <div class="product-details">
+            <h5><span class="item-quantity"></span>${collection.shoppingbag[0].items[coll].Name}</h5>
+            <p>Style #:${collection.shoppingbag[0].items[coll].Style}</p>
+            <p>Color:${collection.shoppingbag[0].items[coll].Color}</p>
+          </div>
+           </div>
+           <div class="price">${collection.shoppingbag[0].items[coll].Size}</div>
+        <div class="quantity">
+          <input type="number" value=${collection.shoppingbag[0].items[coll].Quantity} min="1" class="quantity-field">
+        </div>
+        <div class="subtotal">${collection.shoppingbag[0].items[coll].Price}</div>
+        <div class="remove">
+          <button data-toggle="modal" data-target="#exampleModal">EDIT |</button>
+          <button>REMOVE |</button>
+          <button>SAVE FOR LATER</button>
+        </div>
+           <div>`;
+        mostpopular.innerHTML +=markup;
+       
     }
 }
 

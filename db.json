@@ -1,0 +1,76 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "collections": [
+    {
+      "id": "1",
+      "name": "lets test",
+      "Description": "Must visit in bengaluru",
+      "restaurants": [
+        {
+          "id": "18580202",
+          "Name": "1131 Bar + Kitchen",
+          "Img_Url": "https://b.zmtcdn.com/data/pictures/2/18580202/ed6fb49004a965f3ab2426fc80d4d579.jpg?output-format=webp",
+          "Description": "1131 Bar + Kitchen",
+          "cuisines": "Continental, Mediterranean, Italian, European, Modern Indian, Asian",
+          "city": "Bangalore"
+        },
+        {
+          "id": "2300979",
+          "Name": "Mocha ",
+          "Img_Url": "https://b.zmtcdn.com/data/reviews_photos/28e/e317c367678233a0b047237232ad928e_1520952702.jpg?output-format=webp",
+          "Description": "Mocha ",
+          "cuisines": "Cafe",
+          "city": "Kanpur"
+        },
+        {
+          "id": "206488",
+          "Name": "Maharaja Bhog",
+          "Img_Url": "https://b.zmtcdn.com/data/res_imagery/206488_RESTAURANT_66046ea534ad7f685cd4ba184d39e178.jpg?output-format=webp",
+          "Description": "Maharaja Bhog",
+          "cuisines": "Indian, Rajasthani",
+          "city": "Dubai"
+        },
+        {
+          "id": "2300979",
+          "Name": "Mocha ",
+          "Description": "Mocha ",
+          "Img_Url": "https://b.zmtcdn.com/data/reviews_photos/28e/e317c367678233a0b047237232ad928e_1520952702.jpg?output-format=webp",
+          "cuisines": "Cafe",
+          "city": "Kanpur"
+        }
+      ]
+    },
+    {
+      "name": "asd",
+      "Description": "asd",
+      "restaurants": [],
+      "id": "9pxBCNl"
+    }
+  ],
+  "restaurants": [
+    {
+      "id": "18580202",
+      "Name": "1131 Bar + Kitchen",
+      "Img_Url": "https://b.zmtcdn.com/data/pictures/2/18580202/ed6fb49004a965f3ab2426fc80d4d579.jpg?output-format=webp",
+      "Description": "1131 Bar + Kitchen",
+      "cuisines": "Continental, Mediterranean, Italian, European, Modern Indian, Asian",
+      "city": "Bangalore"
+    }
+  ]
+}

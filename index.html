@@ -1,0 +1,173 @@
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Basket</title>
+</head>
+
+<body>
+  <main>
+    <div class="basket">
+        <h1>YOUR SHOPPING BAG</h1>
+      <div class="basket-labels">
+        <ul>
+          <li class="item item-heading">ITEMS</li>
+          <li class="price">SIZE</li>
+          <li class="quantity">QUANTITY</li>
+          <li class="subtotal">PRICE</li>
+        </ul>
+      </div>
+     
+      <div class="basket-product">
+         
+        <div class="item">
+          <div class="product-image">
+            <img src="https://cdn.shopify.com/s/files/1/0030/3802/products/Superman_tshirt_5.jpg?v=1464408298" alt="Placholder Image 2" class="product-frame">
+          </div>
+          <div class="product-details">
+            <h5><span class="item-quantity"></span>SOLID GREEN COTTON TSHIRT</h5>
+            <p>Stlye #:MS13KT1906</p>
+            <p>Color:BLue</p>
+          </div>
+        </div>
+        <div class="price">S</div>
+        <div class="quantity">
+          <input type="number" value="4" min="1" class="quantity-field">
+        </div>
+        <div class="subtotal">104.00</div>
+        <div class="remove">
+          <button data-toggle="modal" data-target="#exampleModal">EDIT |</button>
+          <button>REMOVE |</button>
+          <button>SAVE FOR LATER</button>
+        </div>
+      </div>
+      <div class="basket-product">
+        <div class="item">
+          <div class="product-image">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXX1EOZOZ_IQixKOOBuKzyT1Y_1vpWn3dnCdqikdjtsGHB20es" alt="Placholder Image 2" class="product-frame">
+          </div>
+          <div class="product-details">
+            <h5><span class="item-quantity"></span>PINK RAINBOW PRINT GIRLS TEE</h5>
+            <p>Stlye #:MS13KT1906</p>
+            <p>Color:BLue</p>
+           
+          </div>
+        </div>
+        <div class="price">S</div>
+        <div class="quantity">
+          <input type="number" value="1" min="1" class="quantity-field">
+        </div>
+        <div class="subtotal">26.00</div>
+        <div class="remove">
+            <button  data-toggle="modal" data-target="#exampleModal">EDIT |</button>
+            <button>REMOVE |</button>
+            <button>SAVE FOR LATER</button>
+        </div>
+      </div>
+    <div><p>&nbsp;</p></div>
+  <div><p>&nbsp;</p></div>
+      
+    </div>
+    <aside>
+        <div class="summary">
+        <div class="contact-us"><strong>Need help <br> or have questions?<br><br>Call Customer Service at<br>1-800-555-5555</strong>
+          <br><br><button class="styund">Chat with one of our stylists</button> <br><br><button class="styund">See return &amp; exchange policy</button></div>
+          <div class="summary-items">
+              <div class="basket-module row">
+                  <div class="col-sm-5"><label for="promo-code">ENTER PROMOTION CODE<br> OR GIFT CARD</label></div>
+                  <div class="col-sm-4"><input id="promo-code" type="text" name="promo-code" maxlength="5" class="promo-code-field"></div>
+                  <div class="col-sm-3"><button class="promo-code-cta">Apply</button></div>
+                </div>
+        <div class="summary-subtotal">
+          <div class="subtotal-title"><strong>SUBTOTAL</strong></div>
+          <div class="subtotal-value final-value" id="basket-subtotal">37.00</div>
+          <div><p>&nbsp;</p></div>
+          <div class="summary-promo">
+            <div class="promo-title"><strong>PROMOTION CODE JF 10 APPLIED</strong></div>
+            <div class="promo-value final-value" id="basket-promo">-7.00</div>
+          </div>
+        </div>
+        <div><p>&nbsp;</p></div>
+        <div class="summary-delivery">
+            <div class="estimated-shipping"><strong>ESTIMATED SHIPPING*</strong><br>
+            You qualify for free shipping<br> because your order is over 50$*</div>
+            <div class="free final-value"><strong>FREE</strong></div>
+        </div>
+        <div class="summary-total">
+          <div class="estimated-total"><strong>ESTIMATED TOTAL</strong><br>Tax will be applied during checkout</div>
+          <div class="total-value final-value" id="basket-total">130.00</div>
+        </div>
+        <div class="summary-checkout">
+            <div class="cont-shop">
+                <button>CONTINUE SHOPPING</button>
+            </div>
+          <button class="btncheckout btn-primary">CHECKOUT</button>
+        </div>
+      </div>
+    </div>
+    </aside>
+  </main>
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+              <div class="row">
+                  <div class="col-md-7 padleft">
+                    <br>
+                    <br>
+                    <div class="row borde">
+                        
+                    </div>
+                    <br>
+                      <div class="row">
+                          <h5><span class="item-quantity"></span>SOLID GREEN COTTON TSHIRT</h5>
+                      </div>.
+                      <br>
+                      <div class="row">
+                          <div class="col-md-4">
+                      <select>
+                          <option value = "">Size</option>
+                          <option value="small">S</option>
+                          <option value="medium">M</option>
+                          <option value="large">L</option>
+                          <option value="Xlarge">XL</option>
+                       
+                        </select>
+                      </div>
+                        <div class="col-md-4">
+                            <select>
+                                <option value="1">QTY:1</option>
+                                <option value="2">QTY:2</option>
+                                <option value="3">QTY:3</option>
+                                <option value="4">QTY:4</option>
+                             
+                              </select>
+                        </div>
+                        
+                        </div>
+                        <br>
+                      <div class="row">
+                          <button type="button" class="btn btn-primary col-md-7">EDIT</button>
+                      </div>
+                      <br>
+                      <div class="row">
+                          <div class="see-prod">
+                              <button>See product details</button>
+                          </div>
+                      </div></div>
+                  <div class="col-md-4 ml-auto"><img class="modalpic" src="https://cdn.shopify.com/s/files/1/0030/3802/products/Superman_tshirt_5.jpg?v=1464408298" alt="Placholder Image 2" class="product-frame"></div>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>

@@ -15,7 +15,9 @@ body {
   font-size: 62.5%;
   margin: 0 auto;
 }
-
+.mobile{
+  display: none;
+}
 a {
   border: 0 none;
   outline: 0;
@@ -413,7 +415,32 @@ aside {
   width: 100%;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 960px) {
+  main {
+    width: 100%;
+  }
+  .product-details {
+    padding: 0 1rem;
+  }
+  .mobile{
+    display: none;
+  }
+}
+
+@media screen and (min-width: 641px) and (max-width: 960px) {
+  aside {
+    padding: 0 1rem 0 0;
+  }
+  .summary {
+    width: 28%;
+  }
+  .mobile{
+    display: none;
+  }
+}
+
+
+@media screen and (max-width: 640px) {
   aside,
   .basket,
   .summary,
@@ -421,6 +448,13 @@ aside {
   .remove {
     width: 100%;
   }
+  .mobile{
+    display: inline;
+  }
+.price,.quantity,.subtotal{
+  display: none;
+}
+
   .basket-labels {
     display: none;
   }
@@ -452,6 +486,63 @@ aside {
     text-align: left;
     margin-top: 0.75rem;
     position: relative;
+  }
+  .remove button {
+    padding: 0;
+  }
+  .summary {
+    margin-top: 1.25rem;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  aside,
+  .basket,
+  .summary,
+  .item,
+  .remove {
+    width: 100%;
+  }
+  .mobile{
+    display: inline;
+  }
+.price,.quantity,.subtotal{
+  display: none;
+}
+  .basket-labels {
+    display: none;
+  }
+  .basket-module {
+    margin-bottom: 1rem;
+  }
+  .item {
+    margin-bottom: 1rem;
+  }
+  .product-image {
+    width: 40%;
+  }
+  .product-details {
+    width: 60%;
+  }
+  .price,
+  .subtotal {
+    width: 33%;
+  }
+  .quantity {
+    text-align: center;
+    width: 34%;
+  }
+  .quantity-field {
+    float: none;
+  }
+  .remove {
+    bottom: 0;
+    text-align: left;
+    margin-top: 0.75rem;
+    position: relative;
+    width: 74%;
+    top: 10px;
   }
   .remove button {
     padding: 0;
@@ -467,70 +558,3 @@ aside {
 
 
 
-
-@media screen and (max-width: 640px) {
-  aside,
-  .basket,
-  .summary,
-  .item,
-  .remove {
-    width: 100%;
-  }
-  .basket-labels {
-    display: none;
-  }
-  .basket-module {
-    margin-bottom: 1rem;
-  }
-  .item {
-    margin-bottom: 1rem;
-  }
-  .product-image {
-    width: 40%;
-  }
-  .product-details {
-    width: 60%;
-  }
-  .price,
-  .subtotal {
-    width: 33%;
-  }
-  .quantity {
-    text-align: center;
-    width: 34%;
-  }
-  .quantity-field {
-    float: none;
-  }
-  .remove {
-    bottom: 0;
-    text-align: left;
-    margin-top: 0.75rem;
-    position: relative;
-  }
-  .remove button {
-    padding: 0;
-  }
-  .summary {
-    margin-top: 1.25rem;
-    position: relative;
-  }
-}
-
-@media screen and (min-width: 641px) and (max-width: 960px) {
-  aside {
-    padding: 0 1rem 0 0;
-  }
-  .summary {
-    width: 28%;
-  }
-}
-
-@media screen and (max-width: 960px) {
-  main {
-    width: 100%;
-  }
-  .product-details {
-    padding: 0 1rem;
-  }
-}

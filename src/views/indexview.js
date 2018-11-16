@@ -28,7 +28,14 @@ function formatMostpoular(collection) {
             <h5><span class="item-quantity"></span>${collection.shoppingbag[0].items[coll].Name}</h5>
             <p>Style #:${collection.shoppingbag[0].items[coll].Style}</p>
             <p>Color:${collection.shoppingbag[0].items[coll].Color}</p>
-          </div>
+            <div class="mobile">
+            <div class="pricemob">SIZE:${collection.shoppingbag[0].items[coll].Size}</div>
+            <div class="quantitymob"><strong>QTY:</strong>
+          <input type="number" value=${collection.shoppingbag[0].items[coll].Quantity} disabled="disabled" min="1" class="quantity-field">
+        </div>
+        <div class="subtotalmob"><h4>$${collection.shoppingbag[0].items[coll].Price*collection.shoppingbag[0].items[coll].Quantity}</h4></div>
+            </div>
+           </div>
            </div>
            <div class="price">${collection.shoppingbag[0].items[coll].Size}</div>
         <div class="quantity">

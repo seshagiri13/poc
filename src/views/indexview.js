@@ -11,7 +11,12 @@ state.store.subscribe(()=>{
 
 function formatMostpoular(collection) {
      let mostpopular = document.querySelector(".basket-product-list");
+     let subtotal = document.querySelector(".subtotal-value");
+     let totval= document.querySelector(".total-value");
     mostpopular.innerHTML="";
+    subtotal.innerHTML="";
+    var subtot=0;
+    var totvalue=0;
     for (var coll in collection.shoppingbag[0].items) {
         const markup =`<div class="basket-product">
          
@@ -29,7 +34,7 @@ function formatMostpoular(collection) {
         <div class="quantity">
           <input type="number" value=${collection.shoppingbag[0].items[coll].Quantity} disabled="disabled" min="1" class="quantity-field">
         </div>
-        <div class="subtotal">${collection.shoppingbag[0].items[coll].Price}</div>
+        <div class="subtotal">${collection.shoppingbag[0].items[coll].Price*collection.shoppingbag[0].items[coll].Quantity}</div>
         <div class="remove">
           <button data-toggle="modal" id=${collection.shoppingbag[0].items[coll].id} class="open-AddBookDialog">EDIT |</button>
           <button id=${collection.shoppingbag[0].items[coll].id} class="delete-item">REMOVE |</button>
@@ -37,8 +42,12 @@ function formatMostpoular(collection) {
         </div>
            <div>`;
         mostpopular.innerHTML +=markup;
+        subtot=subtot+parseInt(`${collection.shoppingbag[0].items[coll].Price*collection.shoppingbag[0].items[coll].Quantity}`,10);
        
     }
+    totvalue=subtot-7;
+    subtotal.innerHTML=subtot;
+    totval.innerHTML=totvalue;
 }
 
 $(document).on("click", ".open-AddBookDialog", function () {

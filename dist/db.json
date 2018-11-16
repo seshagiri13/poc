@@ -9,7 +9,7 @@
           "Img_Url": "https://cdn.shopify.com/s/files/1/0030/3802/products/Superman_tshirt_5.jpg?v=1464408298",
           "Size": "S",
           "Quantity": 4,
-          "Price": "104.00",
+          "Price": "12.00",
           "Style":"MS13KT1906",
           "Color":"Green"
         },
@@ -19,17 +19,17 @@
           "Img_Url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXX1EOZOZ_IQixKOOBuKzyT1Y_1vpWn3dnCdqikdjtsGHB20es",
           "Size": "S",
           "Quantity": 1,
-          "Price":"26.00",
+          "Price":"16.00",
           "Style":"MS13KT1906",
           "Color":"Pink"
         },
         {
-          "id": "1",
+          "id": "3",
           "Name": "SOLID GREEN COTTON TSHIRT",
           "Img_Url": "https://cdn.shopify.com/s/files/1/0030/3802/products/Superman_tshirt_5.jpg?v=1464408298",
           "Size": "S",
           "Quantity": 4,
-          "Price": "104.00",
+          "Price": "18.00",
           "Style":"MS13KT1906",
           "Color":"Green"
         }

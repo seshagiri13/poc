@@ -3,9 +3,9 @@ import { createStore } from 'redux';
 function reducer(state, action) {
     switch (action.type) {
         case 'DELETE':
-            for (var i = 0; i < state.parsedata.restaurants.length; i++) {
-                if (state.parsedata.restaurants[i].id == action.data.id) {
-                    state.parsedata.restaurants.splice(i, 1);
+            for (var i = 0; i < state.parsedata.shoppingbag[0].items.length; i++) {
+                if (state.parsedata.shoppingbag[0].items[i].id == action.data.id) {
+                    state.parsedata.shoppingbag[0].items.splice(i, 1);
                     break;
                 }
             }

@@ -12,7 +12,7 @@ window.onload = ()=>{
      servicea.getShoppingBag().then((data)=>{
       let parsedata=JSON.parse(data);
       state.store.dispatch({type: 'initiate', data:{parsedata}});
-     indexview.formatMostpoular(JSON.parse(data));
+     //indexview.formatMostpoular(JSON.parse(data));
      })
 }
 

@@ -19,52 +19,7 @@
           <li class="subtotal">PRICE</li>
         </ul>
       </div>
-     
-      <div class="basket-product">
-         
-        <div class="item">
-          <div class="product-image">
-            <img src="https://cdn.shopify.com/s/files/1/0030/3802/products/Superman_tshirt_5.jpg?v=1464408298" alt="Placholder Image 2" class="product-frame">
-          </div>
-          <div class="product-details">
-            <h5><span class="item-quantity"></span>SOLID GREEN COTTON TSHIRT</h5>
-            <p>Stlye #:MS13KT1906</p>
-            <p>Color:BLue</p>
-          </div>
-        </div>
-        <div class="price">S</div>
-        <div class="quantity">
-          <input type="number" value="4" min="1" class="quantity-field">
-        </div>
-        <div class="subtotal">104.00</div>
-        <div class="remove">
-          <button data-toggle="modal" data-target="#exampleModal">EDIT |</button>
-          <button>REMOVE |</button>
-          <button>SAVE FOR LATER</button>
-        </div>
-      </div>
-      <div class="basket-product">
-        <div class="item">
-          <div class="product-image">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXX1EOZOZ_IQixKOOBuKzyT1Y_1vpWn3dnCdqikdjtsGHB20es" alt="Placholder Image 2" class="product-frame">
-          </div>
-          <div class="product-details">
-            <h5><span class="item-quantity"></span>PINK RAINBOW PRINT GIRLS TEE</h5>
-            <p>Stlye #:MS13KT1906</p>
-            <p>Color:BLue</p>
-           
-          </div>
-        </div>
-        <div class="price">S</div>
-        <div class="quantity">
-          <input type="number" value="1" min="1" class="quantity-field">
-        </div>
-        <div class="subtotal">26.00</div>
-        <div class="remove">
-            <button  data-toggle="modal" data-target="#exampleModal">EDIT |</button>
-            <button>REMOVE |</button>
-            <button>SAVE FOR LATER</button>
-        </div>
+      <div class="basket-product-list">
       </div>
     <div><p>&nbsp;</p></div>
   <div><p>&nbsp;</p></div>
@@ -119,6 +74,8 @@
           </div>
           <div class="modal-body">
               <div class="row">
+                  <div class="col-md-1 ">&nbsp;
+                  </div>
                   <div class="col-md-7 padleft">
                     <br>
                     <br>
@@ -127,13 +84,13 @@
                     </div>
                     <br>
                       <div class="row">
-                          <h5><span class="item-quantity"></span>SOLID GREEN COTTON TSHIRT</h5>
+                          <h5 id="itemname"><span class="item-quantity"></span></h5>
                       </div>.
                       <br>
                       <div class="row">
-                          <div class="col-md-4">
-                      <select>
-                          <option value = "">Size</option>
+                          <div class="col-md-5">
+                              <label>Size</label>
+                      <select name="itemsize">
                           <option value="small">S</option>
                           <option value="medium">M</option>
                           <option value="large">L</option>
@@ -142,11 +99,12 @@
                         </select>
                       </div>
                         <div class="col-md-4">
-                            <select>
-                                <option value="1">QTY:1</option>
-                                <option value="2">QTY:2</option>
-                                <option value="3">QTY:3</option>
-                                <option value="4">QTY:4</option>
+                          <label>QTY</label>
+                            <select name=quantity>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
                              
                               </select>
                         </div>
@@ -162,12 +120,12 @@
                               <button>See product details</button>
                           </div>
                       </div></div>
-                  <div class="col-md-4 ml-auto"><img class="modalpic" src="https://cdn.shopify.com/s/files/1/0030/3802/products/Superman_tshirt_5.jpg?v=1464408298" alt="Placholder Image 2" class="product-frame"></div>
+                  <div class="col-md-4 ml-auto"><img class="modalpic" id="modalpic" alt="Placholder Image 2" class="product-frame"></div>
                 </div>
           </div>
         </div>
       </div>
     </div>
-<script type="text/javascript" src="index.bundle.js?4e3f814f2efcf7e2d504"></script></body>
+<script type="text/javascript" src="index.bundle.js?5f30627147acb459c036"></script></body>
 
 </html>

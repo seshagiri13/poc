@@ -2,8 +2,16 @@ import jQuery from "jquery";
 window.$ = window.jQuery = jQuery;
 var state= require('../state/state');
 
+
+
+state.store.subscribe(()=>{
+    formatMostpoular(state.store.getState().parsedata); 
+});
+
+
 function formatMostpoular(collection) {
-    let mostpopular = document.querySelector(".basket-product-list");
+     let mostpopular = document.querySelector(".basket-product-list");
+    mostpopular.innerHTML="";
     for (var coll in collection.shoppingbag[0].items) {
         const markup =`<div class="basket-product">
          
@@ -24,7 +32,7 @@ function formatMostpoular(collection) {
         <div class="subtotal">${collection.shoppingbag[0].items[coll].Price}</div>
         <div class="remove">
           <button data-toggle="modal" id=${collection.shoppingbag[0].items[coll].id} class="open-AddBookDialog">EDIT |</button>
-          <button>REMOVE |</button>
+          <button id=${collection.shoppingbag[0].items[coll].id} class="delete-item">REMOVE |</button>
           <button>SAVE FOR LATER</button>
         </div>
            <div>`;
@@ -47,54 +55,14 @@ $(document).on("click", ".open-AddBookDialog", function () {
           $('select[name^="quantity"] option[value='+newArray[0].Quantity+']').attr("selected","selected");
         $('#exampleModal').modal('show');
 });
-function formatSearch(collection) {
-    let seacrhpopular = document.querySelector("#searchresults");
-    for (var coll in collection.restaurants) {
-        document.querySelector("#Search-results").style.display = "block";
-        var card = document.createElement('div');
-        card.id = collection.restaurants[coll].restaurant.R.res_id;
-        var cardheader = document.createElement('div');
-        cardheader.className = 'card-header';
-        cardheader.innerHTML = '<strong>' + collection.restaurants[coll].restaurant.name + '</strong>';
-        card.appendChild(cardheader);
-        cardheader.addEventListener("click", function click(e) {
-            var resid = e.target.parentElement.id;
-            window.location.href = "restaurantdetails.html?resid=" + resid;
-            e.stopPropagation();
-        });
 
-        var cardimage = document.createElement('img');
+$(document).on("click", ".delete-item", function () {
+    var myBookId = this.id ;
+    state.store.dispatch({type: 'DELETE', data:{id:myBookId}});
+});
 
-        cardimage.className = 'card-img-top';
-        cardimage.setAttribute('src', collection.restaurants[coll].restaurant.featured_image);
-        cardimage.setAttribute('alt', collection.restaurants[coll].restaurant.name);
-        card.appendChild(cardimage);
-        cardimage.addEventListener("click", function click(e) {
-            var resid = e.target.parentElement.id;
-            window.location.href = "restaurantdetails.html?resid=" + resid;
-            e.stopPropagation();
-        });
 
-        var cardbody = document.createElement('div');
-
-        cardbody.className = 'card-body';
-        cardbody.innerHTML = collection.restaurants[coll].restaurant.cuisines + "<br>" + collection.restaurants[coll].restaurant.location.city;
-        card.appendChild(cardbody);
-        cardbody.addEventListener("click", function click(e) {
-            var resid = e.target.parentElement.id
-            window.location.href = "restaurantdetails.html?resid=" + resid;
-            e.stopPropagation();
-        });
-        card.className = 'card col-sm-3 text-white bg-dark most-pop';
-        seacrhpopular.appendChild(card);
-        card.addEventListener("click", function click(e) {
-            var resid = e.target.id
-            window.location.href = "restaurantdetails.html?resid=" + resid;
-        });
-    }
-}
 
 module.exports={
-    formatMostpoular:formatMostpoular,
-    formatSearch:formatSearch
+    formatMostpoular:formatMostpoular
 }

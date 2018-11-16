@@ -27,7 +27,7 @@ function formatMostpoular(collection) {
            </div>
            <div class="price">${collection.shoppingbag[0].items[coll].Size}</div>
         <div class="quantity">
-          <input type="number" value=${collection.shoppingbag[0].items[coll].Quantity} min="1" class="quantity-field">
+          <input type="number" value=${collection.shoppingbag[0].items[coll].Quantity} disabled="disabled" min="1" class="quantity-field">
         </div>
         <div class="subtotal">${collection.shoppingbag[0].items[coll].Price}</div>
         <div class="remove">
@@ -49,8 +49,9 @@ $(document).on("click", ".open-AddBookDialog", function () {
           });
           $(".modal-body #itemname").text( newArray[0].Name );
           $(".modal-body #modalpic").attr('src',newArray[0].Img_Url);
+          $(".modal-body .edit").attr('id',newArray[0].id);
           $('select[name^="itemsize"] option:selected').attr("selected",null);
-          $('select[name^="quantity"] option:selected').attr("selected",null);
+          $('select[name^="itemsize"] option:selected').attr("selected",null);
           $('select[name^="itemsize"] option[value='+newArray[0].Size+']').attr("selected","selected");
           $('select[name^="quantity"] option[value='+newArray[0].Quantity+']').attr("selected","selected");
         $('#exampleModal').modal('show');
@@ -61,6 +62,13 @@ $(document).on("click", ".delete-item", function () {
     state.store.dispatch({type: 'DELETE', data:{id:myBookId}});
 });
 
+$(document).on("click", ".edit", function () {
+    var myBookId = this.id ;
+    var siz=$('#itemsize').val();
+    var quant=$('#quantity').val();
+    state.store.dispatch({type: 'EDIT', data:{id:myBookId,size:siz,quantity:quant}});
+    $('#exampleModal').modal('hide');
+});
 
 
 module.exports={

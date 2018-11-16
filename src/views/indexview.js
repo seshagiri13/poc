@@ -13,11 +13,15 @@ function formatMostpoular(collection) {
      let mostpopular = document.querySelector(".basket-product-list");
      let subtotal = document.querySelector(".subtotal-value");
      let totval= document.querySelector(".total-value");
+     let totitem= document.querySelector(".item-heading");
     mostpopular.innerHTML="";
     subtotal.innerHTML="";
+    totitem.innerHTML="";
     var subtot=0;
     var totvalue=0;
+    var totitemno=0;
     for (var coll in collection.shoppingbag[0].items) {
+        totitemno++;
         const markup =`<div class="basket-product">
          
          <div class="item">
@@ -55,6 +59,7 @@ function formatMostpoular(collection) {
     totvalue=subtot-7;
     subtotal.innerHTML=subtot;
     totval.innerHTML=totvalue;
+    totitem.innerHTML=totitemno+" ITEMS";
 }
 
 $(document).on("click", ".open-AddBookDialog", function () {
